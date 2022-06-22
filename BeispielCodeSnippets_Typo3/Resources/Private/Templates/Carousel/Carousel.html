@@ -1,0 +1,64 @@
+<!--TYPO3SEARCH_end-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd">
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <f:for each="{carousel.slides}" as="slide" iteration="iterator">
+                <li data-target="#myCarousel" data-slide-to="{iterator.cycle}"></li>
+            </f:for>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner" id="home">
+            <div class="item active">
+                <div class="fill" style="background-image:url({f:uri.image(src:'{carousel.backgroundImage.uid}', treatIdAsReference:1)});"></div>
+                <div class="carousel-menu carousel-menu-link">
+                    <ul class="nav navbar-nav">
+                        <f:if condition="{carousel.link0Text}">
+                            <li class="carousel-link"><f:link.typolink parameter="{carousel.link0}">{carousel.link0Text}</f:link.typolink></li>
+                        </f:if>
+                        <f:if condition="{carousel.link1Text}">
+                            <li class="carousel-link"><f:link.typolink parameter="{carousel.link1}">{carousel.link1Text}</f:link.typolink></li>
+                        </f:if>
+                        <f:if condition="{carousel.link2Text}">
+                            <li class="carousel-link"><f:link.typolink parameter="{carousel.link2}">{carousel.link2Text}</f:link.typolink></li>
+                        </f:if>
+                        <f:if condition="{carousel.link3Text}">
+                            <li class="carousel-link"><f:link.typolink parameter="{carousel.link3}">{carousel.link3Text}</f:link.typolink></li>
+                        </f:if>
+                    </ul>
+                </div>
+            </div>
+
+            <f:for each="{carousel.slides}" as="slide" iteration="iterator">
+                <div class="item">
+                    <a href="#">
+                        <div class="fill" style="background-image:url('{f:uri.image(src:slide.backgroundImage.uid, treatIdAsReference:1)}');"></div>
+                    </a>
+                    <div class="carousel-menu carousel-menu-logo">
+                        <ul class="nav navbar-nav">
+                            <li class="carousel-logo">
+                                <f:link.typolink parameter="{slide.link}">
+                                    <f:format.raw>{slide.menuTitle}</f:format.raw>
+                                </f:link.typolink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </f:for>
+
+        </div>
+
+        <f:if condition="{carousel.slides}">
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="icon-prev"></span></a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="icon-next"></span></a>
+        </f:if>
+
+        </header>
+
+        <!--TYPO3SEARCH_begin-->
+</html>

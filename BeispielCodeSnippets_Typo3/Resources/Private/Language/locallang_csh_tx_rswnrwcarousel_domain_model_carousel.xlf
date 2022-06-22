@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-23T13:08:25Z" product-name="rswnrw_carousel">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="link0.description">
+				<source>link0</source>
+			</trans-unit>
+			<trans-unit id="link0_text.description">
+				<source>link0Text</source>
+			</trans-unit>
+			<trans-unit id="link1.description">
+				<source>link1</source>
+			</trans-unit>
+			<trans-unit id="link1_text.description">
+				<source>link1Text</source>
+			</trans-unit>
+			<trans-unit id="link2.description">
+				<source>link2</source>
+			</trans-unit>
+			<trans-unit id="link2_text.description">
+				<source>link2Text</source>
+			</trans-unit>
+			<trans-unit id="link3.description">
+				<source>link3</source>
+			</trans-unit>
+			<trans-unit id="link3_text.description">
+				<source>link3Text</source>
+			</trans-unit>
+			<trans-unit id="background_image.description">
+				<source>backgroundImage</source>
+			</trans-unit>
+			<trans-unit id="parent.description">
+				<source>parent</source>
+			</trans-unit>
+			<trans-unit id="slides.description">
+				<source>slides</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

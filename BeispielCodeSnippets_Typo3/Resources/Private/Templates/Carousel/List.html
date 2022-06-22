@@ -1,0 +1,58 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Carousel</h1>
+
+<f:flashMessages />
+
+<table  class="tx_rswnrwcarousel" >
+	<tr>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.title" /></th>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.link0" /></th>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.link0_text" /></th>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.link1" /></th>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.link1_text" /></th>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.link2" /></th>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.link2_text" /></th>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.link3" /></th>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.link3_text" /></th>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.background_image" /></th>
+		<th><f:translate key="tx_rswnrwcarousel_domain_model_carousel.parent" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{carousels}" as="carousel">
+		<tr>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.link0}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.link0Text}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.link1}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.link1Text}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.link2}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.link2Text}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.link3}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.link3Text}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.backgroundImage.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{carousel : carousel}"> {carousel.parent}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{carousel : carousel}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{carousel : carousel}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Carousel</f:link.action>
+</f:section>
+</html>

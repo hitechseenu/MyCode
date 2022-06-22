@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-01-23T13:08:25Z" product-name="rswnrw_carousel">
+		<header/>
+		<body>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_slide">
+				<source>Slide</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_slide.menu_title">
+				<source>Logo</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_slide.menu_caption">
+				<source>Menu Caption</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_slide.link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_slide.background_image">
+				<source>Background Image</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel">
+				<source>Carousel</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.link0">
+				<source>Link0</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.link0_text">
+				<source>Link0 Text</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.link1">
+				<source>Link1</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.link1_text">
+				<source>Link1 Text</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.link2">
+				<source>Link2</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.link2_text">
+				<source>Link2 Text</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.link3">
+				<source>Link3</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.link3_text">
+				<source>Link3 Text</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.background_image">
+				<source>Background Image</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.parent">
+				<source>Parent</source>
+			</trans-unit>
+			<trans-unit id="tx_rswnrwcarousel_domain_model_carousel.slides">
+				<source>Slides</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
