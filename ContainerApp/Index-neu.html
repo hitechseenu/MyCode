@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>Jahrestherapie Rechner</title>
+    <script src="../../../js/jquery-3.4.1.min.js"></script>
+    <style lang="scss">
+        .hint {
+            text-align: center;
+            background: #F2F2F2;
+            font-size: 14px;
+        }
+
+        #app {
+            text-align: -webkit-center;
+            text-align: -moz-center;
+
+        }
+
+        table tr td select {
+            border: none;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table {
+            max-width: 915px;
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-family: Arial, sans-serif;
+            font-size: 17px !important;
+
+        }
+
+        td, select {
+            background: #10384F;
+        }
+
+        .hint-row {
+            background: #F2F2F2;
+        }
+
+
+
+        select {
+            width: 100%;
+            position: relative;
+            left: 9px;
+            color:white;
+            outline: 0px;
+            text-align: center;
+            font-size: 17px;
+            text-align-last:center;
+        }
+
+        .table-header {
+            /* font-size: 13px;*/
+            color: #10384F;
+            font-weight: 700;
+            padding-left: 5px;
+            position: relative;
+        }
+
+        .text {
+            border: none;
+        }
+
+        .tableimg {
+            border: none;
+        }
+
+        caption {
+            text-align: left;
+            max-width: 100%;
+            padding-bottom: 40px;
+            padding-top: 50px;
+            color: #10384F;
+            font-family: Arial, sans-serif;
+
+        }
+
+        .caption {
+            text-align: left;
+            font-size: 22.0pt;
+            font-weight: 700;
+            text-decoration: underline;
+            position: relative;
+            top: 19px;
+        }
+
+        caption img {
+            float: right;
+            width: 50px;
+            height: 51px;
+            margin-right: 20px;
+
+
+        }
+      .table-header .pills{display:inline}
+
+        .table-header .pills img {
+            width: 15px;
+            height: auto;
+            float: right;
+            position: absolute;
+            left: 145px;
+            display: inline}
+       .table-header .table{display:inline}
+        .table-header .table img {
+            width: 28px;
+            height: auto;
+            float: right;
+            position: absolute;
+            left: 145px;
+            display: inline
+        }
+        .table-header .Injection{display:inline}
+        .table-header .Injection img {
+            width: 21px;
+            height: auto;
+            float: right;
+            position: absolute;
+            left: 145px;
+            display: inline
+        }
+       .table-header .euro{display:inline}
+        .table-header .euro img {
+            width: 13px;
+            height: auto;
+            float: right;
+            position: absolute;
+            left: 145px;
+            display: inline
+        }
+       .table-header .person{display:inline}
+        .table-header .person img {
+            text-align: center;
+            position: absolute;
+            left: 145px;
+            bottom: 14px;
+            width: 13px;
+            height: auto;
+           display: inline
+        }
+
+
+        .table-result-header {
+            /* font-size: 13px;*/
+            color: #10384F;
+            font-weight: 700;
+            padding-left: 0px;
+
+            position: relative;
+
+        }
+
+
+        .table-results th {
+            border: 1px solid #B9E67D;
+            padding-left: 5px;
+
+        }
+
+        .table-result-header td {
+            border: 1px solid #B9E67D;
+            background: #B9E67D;
+
+        }
+
+        .table-result-header select {
+            border: 1px solid white;
+            background: #B9E67D;
+        }
+
+        .table-result-header {
+            font-size: 17px;
+        }
+
+
+        option[value] {
+            border: 0px;
+            outline: 0px;
+            scroll-behavior: smooth;
+        }
+
+        .table-results {
+            border: 1px solid #B9E67D;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .table-results th {
+            border: 1px solid #B9E67D;
+
+        }
+
+        .table-results td {
+            border: 1px solid white;
+            background: #B9E67D;
+            padding: 10px;
+            text-align: center;
+            width: 160px;
+
+        }
+
+        .table-result-body {
+            border-top: #B9E67D !important;
+            padding: unset;
+        }
+
+        .table-result-body-ipJahr {
+            border-bottom: #B9E67D !important;
+        }
+        pre{
+            font-family: Arial, sans-serif
+        }
+        select option{
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+        }
+        optgroup { font-size:17px; }
+        .tableproduct td{
+            width: 160px;
+        }
+    </style>
+</head>
+<body>
+<div id="close">
+    <a href="javascript:history.back();window.close();" class="lb-close">
+        <img src="../../../images/btn_close.png">
+    </a>
+</div>
+<div id="app">
+    <table class="container tableproduct">
+        <tr>
+            <th class="table-header" >Präparat <div class="pills"><img src="../jahrestherapierechner/pills.png"></div></th>
+            <td >
+                <select v-model="selectedProduct" @change="setSelectsToDefault">
+                  <option value=""></option>
+                    <option v-for="(level1,index) in products"
+                            :key="index"
+                            :value="level1">{{level1.name}}</option>
+                </select>
+            </td>
+            <td >
+                <select v-model="selectedProduct1"  @change="setSelectsToDefault1">
+                  <option value=""></option>
+                    <option v-for="(level1,index) in products"
+                            :key="index"
+                            :value="level1">{{level1.name}}</option>
+                </select>
+            </td>
+            <td >
+                <select v-model="selectedProduct2"  @change="setSelectsToDefault2">
+                  <option value=""></option>
+                    <option v-for="(level1,index) in products"
+                            :key="index"
+                            :value="level1">{{level1.name}}</option>
+                </select>
+            </td>
+            <td >
+                <select v-model="selectedProduct3"  @change="setSelectsToDefault3">
+                  <option value=""></option>
+                    <option v-for="(level1,index) in products"
+                            :key="index"
+                            :value="level1">{{level1.name}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr class="hint-row">
+            <th class="table-header">Dosierung laut Fachinformation</th>
+
+            <td class="hint"><pre v-if="selectedProduct">{{selectedProduct.Hint}}</pre></td>
+            <td class="hint"><pre v-if="selectedProduct1">{{selectedProduct1.Hint}}</pre></td>
+            <td class="hint"><pre v-if="selectedProduct2">{{selectedProduct2.Hint}}</pre></td>
+            <td class="hint"><pre v-if="selectedProduct3">{{selectedProduct3.Hint}}</pre></td>
+        </tr>
+        <tr>
+            <th class="table-header">Häufigkeit <div class="table"><img src="../jahrestherapierechner/table.png"></div></th>
+            <td>
+                <select v-if="haufigkeitMatches" v-model="selectedInjection">
+                    <option v-for="(match,i) in haufigkeitMatches"
+                            :key="i"
+                            :value="match.value" >{{ match.name }}</option>
+                </select>
+            </td>
+            <td >
+                <select v-if="haufigkeitMatches" v-model="selectedInjection1">
+                    <option  v-for="(match,i) in haufigkeitMatches1"
+                             :key="i"
+                             :value="match.value" >{{ match.name }}</option>
+                </select>
+            </td>
+            <td >
+                <select v-if="haufigkeitMatches" v-model="selectedInjection2">
+                    <option  v-for="(match,i) in haufigkeitMatches2"
+                             :key="i"
+                             :value="match.value" >{{ match.name }}</option>
+                </select>
+            </td>
+            <td >
+                <select v-if="haufigkeitMatches" v-model="selectedInjection3">
+                    <option  v-for="(match,i) in haufigkeitMatches3"
+                             :key="i"
+                             :value="match.value" >{{ match.name }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th class="table-header">IE pro kg <div class="Injection"><img src="../jahrestherapierechner/Injection.png"></div> </th>
+            <td>
+                <select v-model="selectedIeProKg">
+                    <option v-for="level1 in ieProKg"
+                            :value="level1">{{level1}}</option>
+                </select>
+            </td>
+            <td>
+                <select v-model="selectedIeProKg1">
+                    <option v-for="level1 in ieProKg"
+                            :value="level1">{{level1}}</option>
+                </select>
+            </td>
+            <td>
+                <select v-model="selectedIeProKg2">
+                    <option v-for="level1 in ieProKg"
+                            :value="level1">{{level1}}</option>
+                </select>
+            </td>
+            <td>
+                <select v-model="selectedIeProKg3">
+                    <option v-for="level1 in ieProKg"
+                            :value="level1">{{level1}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th class="table-header">Preis pro IE <div class="euro"><img src="../jahrestherapierechner/euro.png"></div> </th>
+            <td>
+                <select v-model="selectedPreisProIE">
+                    <option v-for="level1 in preiseProIE"
+                            :value="level1">{{(Math.round(level1*1000)/1000).toFixed(2)}} €</option>
+                </select>
+            </td>
+            <td>
+                <select v-model="selectedPreisProIE1">
+                    <option v-for="level1 in preiseProIE"
+                            :value="level1">{{(Math.round(level1*1000)/1000).toFixed(2)}} €</option>
+                </select>
+            </td>
+            <td>
+                <select v-model="selectedPreisProIE2">
+                    <option v-for="level1 in preiseProIE"
+                            :value="level1">{{(Math.round(level1*1000)/1000).toFixed(2)}} €</option>
+                </select>
+            </td>
+            <td>
+                <select v-model="selectedPreisProIE3">
+                    <option v-for="level1 in preiseProIE"
+                            :value="level1">{{(Math.round(level1*1000)/1000).toFixed(2)}} €</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th class="table-header">Gewicht des  Patienten in kg <div class="person"><img src="../jahrestherapierechner/person.png"></div></th>
+            <td>
+                <select v-model="selectedGewicht">
+                    <option v-for="level1 in gewicht"
+                            :value="level1">{{level1}}</option>
+                </select>
+            </td>
+            <td>
+                <select v-model="selectedGewicht1">
+                    <option v-for="level1 in gewicht"
+                            :value="level1">{{level1}}</option>
+                </select>
+            </td>
+            <td>
+                <select v-model="selectedGewicht2">
+                    <option v-for="level1 in gewicht"
+                            :value="level1">{{level1}}</option>
+                </select>
+            </td>
+            <td>
+                <select v-model="selectedGewicht3">
+                    <option v-for="level1 in gewicht"
+                            :value="level1">{{level1}}</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table class="container table-results">
+        <tr>
+            <th class="table-result-header">Benötigte IE pro Injektion</th>
+            <td class="table-result-body"><div v-if="selectedGewicht" class="hideResult" >{{selectedIeProKg*selectedGewicht}}</div></td>
+            <td class="table-result-body"><div v-if="selectedGewicht1" class="hideResult" >{{selectedIeProKg1*selectedGewicht1}}</div></td>
+            <td class="table-result-body"><div v-if="selectedGewicht2" class="hideResult" >{{selectedIeProKg2*selectedGewicht2}}</div></td>
+            <td class="table-result-body"><div v-if="selectedGewicht3" class="hideResult" >{{selectedIeProKg3*selectedGewicht3}}</div></td>
+        </tr>
+        <tr>
+            <th class="table-result-header">IE Jahresverbrauch</th>
+            <td ><div v-if="selectedGewicht" class="hideResult" >{{Number(Math.round(selectedInjection*selectedIeProKg*selectedGewicht)).toLocaleString()}}</div></td>
+            <td><div v-if="selectedGewicht1" class="hideResult">{{Number(Math.round(selectedInjection1*selectedIeProKg1*selectedGewicht1)).toLocaleString()}}</div></td>
+            <td><div v-if="selectedGewicht2" class="hideResult">{{Number(Math.round(selectedInjection2*selectedIeProKg2*selectedGewicht2)).toLocaleString()}}</div></td>
+            <td><div v-if="selectedGewicht3" class="hideResult">{{Number(Math.round(selectedInjection3*selectedIeProKg3*selectedGewicht3)).toLocaleString()}}</div></td>
+        </tr>
+        <tr>
+            <th class="table-result-header">Jahrestherapiekosten</th>
+            <td><div v-if="selectedGewicht" class="hideResult" >{{Number(Math.round(selectedPreisProIE*selectedIeProKg*selectedGewicht*selectedInjection)).toLocaleString()}} €</div></td>
+            <td><div v-if="selectedGewicht1" class="hideResult">{{Number(Math.round(selectedPreisProIE1*selectedIeProKg1*selectedGewicht1*selectedInjection1)).toLocaleString()}} €</div></td>
+            <td><div v-if="selectedGewicht2" class="hideResult">{{Number(Math.round(selectedPreisProIE2*selectedIeProKg2*selectedGewicht2*selectedInjection2)).toLocaleString()}} €</div></td>
+            <td><div v-if="selectedGewicht3" class="hideResult">{{Number(Math.round(selectedPreisProIE3*selectedIeProKg3*selectedGewicht3*selectedInjection3)).toLocaleString()}} €</div></td>
+        </tr>
+        <tr>
+            <th class="table-result-header">Injektionen pro Jahr</th>
+            <td class="table-result-body-ipJahr"><div class="hideResult" v-if="selectedGewicht">{{Math.round(selectedInjection)}}</div></td>
+            <td class="table-result-body-ipJahr"><div class="hideResult" v-if="selectedGewicht1">{{Math.round(selectedInjection1)}}</div></td>
+            <td class="table-result-body-ipJahr"><div class="hideResult" v-if="selectedGewicht2">{{Math.round(selectedInjection2)}}</div></td>
+            <td class="table-result-body-ipJahr"><div class="hideResult" v-if="selectedGewicht3">{{Math.round(selectedInjection3)}}</div></td>
+        </tr>
+    </table>
+</div>
+
+<script src="vue.min.js"></script>
+<script>
+    "use strict";
+
+    new Vue({
+        el: '#app',
+        data: {
+            selectedPreisProIE: [],
+            selectedPreisProIE1: [],
+            selectedPreisProIE2: [],
+            selectedPreisProIE3: [],
+            selectedIeProKg: [],
+            selectedIeProKg1: [],
+            selectedIeProKg2: [],
+            selectedIeProKg3: [],
+            selectedGewicht: [],
+            selectedGewicht1: [],
+            selectedGewicht2: [],
+            selectedGewicht3: [],
+            selectedInjection: [],
+            selectedInjection1: [],
+            selectedInjection2: [],
+            selectedInjection3: [],
+            selectedProduct: null,
+            selectedProduct1: null,
+            selectedProduct2: null,
+            selectedProduct3: null,
+            dataJson: [],
+            products: [{
+                name: "Jivi",
+                Hint: "45-60 IE/kg alle 5 Tage\n60 IE 1x/Woche\n30-40 IE 2 x/Woche",
+                frequency: [1, 2, 8]
+            }, {
+                name: "Adynovi",
+                Hint: "40-50 IE/kg\n2x/Woche im Abstand\nvon 3-4 Tagen",
+                frequency: [2, 6, 7]
+            }, {
+                name: "Elocta",
+                Hint: "50 (25-65) IE/kg\nalle 3-5 Tage",
+                frequency: [6, 7, 8]
+            }, {
+                name: "Esperoct",
+                Hint: "50 IE/kg \nalle 4 Tage",
+                frequency: [7]
+            }, {
+                name: "Kovaltry",
+                Hint: "20-40 I.E./kg\n2-3x/Woche",
+                frequency: [2, 3]
+            }, {
+                name: "Advate",
+                Hint: "20-40 I.E./kg\nAlle 2-3 Tage",
+                frequency: [5, 6]
+            }, {
+                name: "ReFacto AF",
+                Hint: "20-40 I.E./kg\nAlle 2-3 Tage",
+                frequency: [5, 6]
+            }, {
+                name: "NovoEight",
+                Hint: "40-60 I.E./kg \nJeden 3.Tag oder\n2x/Woche",
+                frequency: [2, 3, 5, 6]
+            }, {
+                name: "Nuwiq_Vihuma",
+                Hint: "20-40 I.E./kg\nAlle 2-3 Tage",
+                frequency: [5, 6]
+            }, {
+                name: "Afstyla",
+                Hint: "20-50 I.E./kg\n2-3x/Woche",
+                frequency: [2, 3]
+            }, {
+                name: "Plasma",
+                Hint: "20-40 I.E./kg\nAlle 2-3 Tage",
+                frequency: [5, 6]
+            }, {
+                name: "Sonstiges",
+                Hint: "Individuell",
+                frequency: [1, 2, 3, 4, 5, 6, 7, 8]
+            }],
+            haufigkeit: [{
+                name: "1x / Woche",
+                id: 1,
+                value: 52.1428571429
+            }, {
+                name: "2x / Woche",
+                value: 104.2857142857143,
+                id: 2
+            }, {
+                name: "3x / Woche",
+                value: 156.4285714285714,
+                id: 3
+            }, {
+                name: "alle 1 Tage",
+                value: 365,
+                id: 4
+            }, {
+                name: "alle 2 Tage",
+                value: 182.5,
+                id: 5
+            }, {
+                name: "alle 3 Tage",
+                value: 121.6666666666667,
+                id: 6
+            }, {
+                name: "alle 4 Tage",
+                value: 91.25,
+                id: 7
+            }, {
+                name: "alle 5 Tage",
+                value: 73,
+                id: 8
+            }]
+        },
+        computed: {
+            haufigkeitMatches: function haufigkeitMatches() {
+                var _this = this;
+
+                if (this.selectedProduct) {
+                    return this.haufigkeit.filter(function (x) {
+                        return _this.selectedProduct.frequency.includes(x.id);
+                    });
+                }
+            },
+            haufigkeitMatches1: function haufigkeitMatches1() {
+                var _this2 = this;
+
+                if (this.selectedProduct1) {
+                    return this.haufigkeit.filter(function (x) {
+                        return _this2.selectedProduct1.frequency.includes(x.id);
+                    });
+                }
+            },
+            haufigkeitMatches2: function haufigkeitMatches2() {
+                var _this3 = this;
+
+                if (this.selectedProduct2) {
+                    return this.haufigkeit.filter(function (x) {
+                        return _this3.selectedProduct2.frequency.includes(x.id);
+                    });
+                }
+            },
+            haufigkeitMatches3: function haufigkeitMatches3() {
+                var _this4 = this;
+
+                if (this.selectedProduct3) {
+                    return this.haufigkeit.filter(function (x) {
+                        return _this4.selectedProduct3.frequency.includes(x.id);
+                    });
+                }
+            },
+            preiseProIE: function preiseProIE() {
+                var list = [];
+
+                for (var n = 0.50; n < 1.50; n = n + 0.01) {
+                    list.push(n);
+                }
+
+                return list;
+            },
+            ieProKg: function ieProKg() {
+                var list = [];
+
+                for (var n = 5; n <= 70; n = n + 5) {
+                    list.push(n);
+                }
+
+                return list;
+            },
+            gewicht: function gewicht() {
+                var list = [];
+
+                for (var n = 5; n <= 120; n = n + 5) {
+                    list.push(n);
+                }
+
+                return list;
+            }
+        },
+        methods:{
+            setSelectsToDefault(){
+                this.selectedInjection = 0;
+                this.selectedIeProKg = 0;
+                this.selectedPreisProIE = 0;
+                this.selectedGewicht = 0;
+            },
+            setSelectsToDefault1(){
+                this.selectedInjection1 = 0;
+                this.selectedIeProKg1 = 0;
+                this.selectedPreisProIE1 = 0;
+                this.selectedGewicht1 = 0;
+            },
+            setSelectsToDefault2(){
+                this.selectedInjection2 = 0;
+                this.selectedIeProKg2 = 0;
+                this.selectedPreisProIE2 = 0;
+                this.selectedGewicht2 = 0;
+            },
+            setSelectsToDefault3(){
+                this.selectedInjection3 = 0;
+                this.selectedIeProKg3 = 0;
+                this.selectedPreisProIE3 = 0;
+                this.selectedGewicht3 = 0;
+            }
+        }
+    });
+</script>
+<script>
+      $(document).ready(function () {
+        $(".hideResult").hide();
+    });
+    $(document).ready(function(){
+        $(".tableproduct .ui-select").removeClass("ui-select");
+        $(".tableproduct .ui-btn").removeClass("ui-btn");
+        $(".tableproduct .ui-icon-carat-d").removeClass("ui-icon-carat-d");
+        $(".tableproduct .ui-btn-icon-right").removeClass("ui-btn-icon-right");
+        $(".tableproduct .ui-corner-all").removeClass("ui-corner-all");
+        $(".tableproduct .ui-shadow").removeClass("ui-shadow");
+        $(".tableproduct span").remove();
+    });
+    $(document).click(function () {
+        $(".tableproduct span").remove();
+    });
+</script>
+
+</body>
+</html>
