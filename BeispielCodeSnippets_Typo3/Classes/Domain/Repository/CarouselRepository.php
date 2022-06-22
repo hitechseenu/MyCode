@@ -3,7 +3,7 @@ namespace Afm\RswnrwCarousel\Domain\Repository;
 
 /***
  *
- * This file is part of the "Radschnellwege NRW Homepage Carousel" Extension for TYPO3 CMS.
+ * This file is part of the "Homepage Carousel" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.

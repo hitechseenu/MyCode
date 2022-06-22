@@ -11,7 +11,7 @@ call_user_func(
             'Homepage Carousel'
         );
 
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extKey, 'Configuration/TypoScript', 'Radschnellwege NRW Homepage Carousel');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extKey, 'Configuration/TypoScript', 'Homepage Carousel');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_rswnrwcarousel_domain_model_slide', 'EXT:rswnrw_carousel/Resources/Private/Language/locallang_csh_tx_rswnrwcarousel_domain_model_slide.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_rswnrwcarousel_domain_model_slide');
